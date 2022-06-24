@@ -1,0 +1,51 @@
+.threadpage-content{
+    overflow: scroll;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 91.5vh;
+    width: 15vw;
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+}
+
+.threadmember-avatar{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    height: 65%;
+    margin-top: 10px;
+    width: auto\9;
+    max-width: 100%;
+}
+
+.threadmember-content{
+    color: white;
+    word-wrap: break-word;
+    font-weight: 400;
+    font-size: calc(0.8vh + 0.8vw);
+}
+
+.threadmember-username{
+    font-weight: 600;
+    margin-bottom: -0px;
+    font-size: 16px;
+    color: white;
+}
+
+.threadmember-container{
+    background:#343434;
+    display: flex;
+    overflow: auto;
+    overflow-wrap: break-word;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 6vh;
+    margin-left: 10%;
+    border-radius: 2px;
+}

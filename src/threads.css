@@ -1,0 +1,176 @@
+.thread-row{
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.thread-row-list{
+    flex: 0 0 auto;
+}
+
+.thread-title{
+    color: white;
+    margin-left: 20px;
+    word-wrap: break-word;
+}
+
+
+
+.thread-subtitle{
+    color:rgb(166, 166, 166);
+    font-size: 0.65rem;
+    margin-left: 22px;
+    margin-top: -15px;
+}
+
+.create-thread-button{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+transform: translateX(-50%);
+align-items: center;
+    display: inline-flex;
+    border-radius: 12px;
+    background-color:  #6c04fc;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 10px;
+}
+
+
+
+.thread-profile-card-base{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.3rem;
+    display: flex;
+    width: 30%;
+    height: 100%;
+    background:#343434;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+.thread-profile-card-center{
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+}
+
+.thread-username-title{
+    font-weight: 600;
+    color: white;
+    font-size: 30px;
+}
+
+.thread-profile-avatar{
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    margin-left: 20px;
+    display: flex;
+    position: relative;
+    
+}
+
+.thread-profile-text-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 7px;
+    margin-left: 20px;
+}
+
+.thread-profile-title{
+    color: white;
+    font-size: 100%;
+
+}
+.thread-profile-title strong{
+    color: white;
+    font-size: 100%;
+
+}
+
+.thread-profile-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.thread-bottom-right{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+.thread-password-text{
+    -webkit-text-security: disc;
+    color: white;
+}
+
+.thread-profile-button{
+    margin-right: 15px;
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    background-color: #6c04fc;
+    margin-left: auto;
+}
+
+.thread-profile-button-view{
+    margin-right: 15px;
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    background-color: #2b2b2b;
+    margin-left: auto;
+}
+
+.settings-notification-error{
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .settings-closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .settings-closebtn:hover {
+    color: black;
+  }
+
+
+.settings-overlay-container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}

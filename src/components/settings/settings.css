@@ -1,0 +1,142 @@
+.settings-profile-card-base{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.3rem;
+    display: flex;
+    width: 70%;
+    height: 70%;
+    background:#343434;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+.settings-profile-card-center{
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+}
+
+.settings-username-title{
+    font-weight: 600;
+    color: white;
+    font-size: 30px;
+}
+
+.settings-profile-avatar{
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    margin-left: 20px;
+    display: flex;
+    position: relative;
+    
+}
+
+.settings-profile-text-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 7px;
+    margin-left: 20px;
+}
+
+.settings-profile-title{
+    color: white;
+    font-size: 100%;
+
+}
+.settings-profile-title strong{
+    color: white;
+    font-size: 100%;
+
+}
+
+.settings-profile-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.settings-bottom-right{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+.settings-password-text{
+    -webkit-text-security: disc;
+    color: white;
+}
+
+.settings-profile-button{
+    margin-right: 15px;
+    float: right;
+}
+
+.settings-avatar-container:after{
+    font-family: 'Font Awesome 5 Free';
+font-weight: 900;
+content: "\f044";
+position: absolute;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+border: 1px solid grey;
+top: 0;
+left: 113px;
+background: white;
+color: blue;
+align-items: center;
+display: flex;
+justify-content: center;
+}
+
+.settings-profile-overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.settings-notification-error{
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .settings-closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .settings-closebtn:hover {
+    color: black;
+  }
+
+
+.settings-overlay-container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}

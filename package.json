@@ -1,21 +1,55 @@
 {
   "name": "phantom",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.3",
+    "discord-rpc": "^4.0.1",
+    "electron-is-dev": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "socket.io-client": "^4.5.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "./",
+  "main": "public/main.electron.js",
+  "build": {
+    "productName": "Phantom",
+    "appId": "live.phantomapp",
+    "directories": {
+      "buildResources": "build"
+    },
+    "files": [
+      "build/**/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": "./build/icon.png"
+    },
+    "win": {
+      "icon": "./build/icon.ico"
+    }
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron:serve": "concurrently -k \"npm start\" \"npm run electron:start\"",
+    "electron:servewin": "concurrently -k \"npm start\" \"npm run electron:startwin\"",
+    "electron:start": "wait-on tcp:3000 && electron .",
+    "electron:startwin": "electron .",
+    "electron:build": "npm run build && electron-builder -c.extraMetadata.main=build/main.electron.js",
+    "electron:buildmacx64": "npm run build && electron-builder -c.extraMetadata.main=build/main.electron.js --mac --x64",
+    "electron:buildwindows": "npm run build && electron-builder -c.extraMetadata.main=build/main.electron.js --win --x64"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +68,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^19.0.4",
+    "electron-builder": "^23.0.3",
+    "electron-packager": "^15.5.1",
+    "wait-on": "^6.0.1"
   }
 }

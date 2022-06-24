@@ -1,0 +1,33 @@
+.usermessage-avatar{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    height: 65%;
+    margin-top: 10px;
+    width: auto\9;
+    max-width: 100%;
+}
+
+.usermessage-content{
+    color: white;
+    word-wrap: break-word;
+    font-weight: 400;
+    font-size: calc(0.8vh + 0.8vw);
+}
+
+.usermessage-username{
+    font-weight: 600;
+    margin-bottom: -0px;
+    font-size: calc(1vw + 1vh);
+    color: white;
+}
+
+.usermessage-container{
+    background:#343434;
+    display: flex;
+    overflow: auto;
+    overflow-wrap: break-word;
+
+    width: 100%;
+    height: 12vh;
+}

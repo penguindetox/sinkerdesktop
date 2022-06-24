@@ -1,0 +1,66 @@
+.message-form{
+    position: fixed;
+    bottom: 0;
+    left: 70%;
+transform: translateX(-70%);
+align-items: center;
+    display: inline-flex;
+}
+
+.message-input{
+    width: 40vw;
+    height: 0.75vh;
+    font-size: 0.5rem;
+    border-radius: 15px;
+}
+
+.message-button{
+    border-radius: 12px;
+    background-color:  #6c04fc;
+    color: white;
+    font-weight: 700;
+    margin-left: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.main-message-content{
+    color: white;
+    overflow-y: scroll;
+    height: 80vh;
+    width: 70vw;
+}
+
+.user-header{
+    height: 8vh;
+    width: 72vw;
+    border-radius: 5px;
+    background: rgb(37, 37, 37);
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.no-content-container{
+    color:rgb(97, 95, 95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.user-header-title{
+    font-size: 1.5rem;
+    margin-left: 20px;
+    color:white;
+    font-weight: 700;
+}
+
+.user-header-avatar{
+    margin-left: 20px;
+    height: 4.75vh;
+    border-radius: 15px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            body {
+            font-size: 16px;
+            overflow-x: scroll;
+            background:#2b2b2b;
+                background-size:100% 100%;
+                -webkit-user-select: none;
+                user-select: none;
+                -webkit-app-region: drag;
+            }
+            @keyframes spinner {
+        0% {
+          transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        }
+      }
+      .spin::before {
+        animation: 1.5s linear infinite spinner;
+        animation-play-state: inherit;
+        border: solid 5px #cfd0d1;
+        border-bottom-color: #1c87c9;
+        border-radius: 50%;
+        content: "";
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate3d(-50%, -50%, 0);
+        will-change: transform;
+      }
+      .spin-pos{
+        position: fixed;
+        top: 75%;
+        left: 50%;
+      }
+                </style>
+    </head>
+
+    <body>
+        <div style="display: flex;align-items: center;justify-content: center;">
+            <img style="width: 200px;height: 200px;" src="../icon.png" />
+        </div>
+        <div style="display: flex;align-items: center;justify-content: center;">
+           
+           <div class="spin spin-pos"></div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,155 @@
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { API_URL, makeAuthGetRequest, makeAuthPostRequest } from '../../http/HttpClient';
+import { ioclient } from '../../http/IOClient';
+import { withRouter } from '../WithRouter';
+import { FaUser, FaUserPlus } from 'react-icons/fa';
+import './mainpage.css';
+
+function FriendTab(props){
+    const curlocation = useLocation();
+    const [location,setLocation] = useState(curlocation);
+
+    useEffect(() =>{
+        setLocation(curlocation);
+    },[curlocation]);
+    
+    if(location.pathname.includes(`/app/home/${props.friend.id}`)){
+        return (
+            <Link style={{'textDecoration':"none",color:"white"}} to={`/app/home/${props.friend.id}`}>
+                <div className={'profile-card-base-selected'}>
+                    <img className={'profile-image'} src={props.friend.avatar}></img>
+                    <span className={'profile-text-container'}>
+                    
+                        <p className={'username-title-selected'}>{props.friend.username}</p>
+                    </span>
+    
+                </div>
+            </Link>
+    
+        )
+    }else{
+        return (
+            <Link style={{'textDecoration':"none",color:"white"}} to={`/app/home/${props.friend.id}`}>
+                <div className={'profile-card-base'}>
+                    <img className={'profile-image'} src={props.friend.avatar}></img>
+                    <span className={'profile-text-container'}>
+                    
+                        <p className={'username-title'}>{props.friend.username}</p>
+                    </span>
+    
+                </div>
+            </Link>
+    
+        )
+    }
+    
+}
+
+function AddFriendNotification(props){
+    return (
+        <div>
+
+        </div>
+    )
+}
+
+class MainUserPage extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            user:null,
+            friends:"loading",
+            addfriend:""
+        }
+    }
+
+    async componentDidMount(){
+        var res = await makeAuthGetRequest(API_URL + "/api/v1/users/user/me");
+
+
+        if(res.data.status == "success"){
+            var userfriends = await makeAuthGetRequest(API_URL + "/api/v1/users/friends/me");
+            if(userfriends.data.status == "success"){
+                var allfriends = [];
+                for(var i = 0; i < userfriends.data.friends.length; i++){
+                    allfriends.push(<FriendTab friend={userfriends.data.friends[i]} />);
+                    
+                }
+                this.setState({'user':res.data.user,'friends':allfriends});
+            }else{
+                this.setState({'user':res.data.user,'friends':false});
+            }
+           
+        }
+        
+    }
+
+    async addUser(e){
+        e.preventDefault();
+        
+        var res = await makeAuthPostRequest(API_URL + "/api/v1/users/addfriend",{'username':this.state.addfriend})
+    }
+
+    updateAddFriend(e){
+        this.setState({'addfriend':e.target.value})
+    }
+
+    render(){
+        if(this.state.friends == "loading"){
+            return (
+                <div style={{'display':'flex',position:'relative'}}>
+                    
+                    <div className={"mainpage-content"}>
+                        <div>
+                            <form onSubmit={this.addUser.bind(this)} className={'add-user-form'}>
+                                <input onChange={this.updateAddFriend.bind(this)}value={this.state.addfriend} className='add-user-input' placeholder="Add people..." ></input>
+                                <button type='submit' className='add-user-button'><FaUserPlus size={'20px'}></FaUserPlus></button>
+                            </form>
+                            
+                            </div>
+                            <div style={{"fontSize":"30px","fontWeight":"700",'color':"white","display":"flex","alignItems":"center","justifyContent":"center"}}>
+                
+                                {this.state.friends}
+                            </div>
+                            
+                        </div>
+                        <div style={{"marginTop":"10px"}}>
+                    
+                        {this.props.location.pathname.length != 9 ? this.props.children : (<div className={'no-content-container'}>
+                            <h3>Click on a profile to start a conversation, or go and check out the threads!</h3>
+                        </div>)}
+                    </div>
+                    
+                </div>
+            )
+        }else{
+            return (
+                <div style={{'display':'flex',position:'relative'}}>
+                    
+                    <div className={"mainpage-content"}>
+                    <div>
+                    <form className={'add-user-form'}>
+                            <input className='add-user-input' placeholder="Add people..." ></input>
+                            <button className='add-user-button'><FaUserPlus size={'20px'}></FaUserPlus></button>
+                        </form>
+                    </div>
+                        {this.state.friends}
+                    </div>
+                    <div style={{"marginTop":"10px"}}>
+                        
+                        {this.props.location.pathname.length != 9? this.props.children : (<div style={{'display':"flex","alignItems":"center","justifyContent":"center","position":"relative"}} className={'no-content-container'}>
+                        <h3 >Click on a profile to start a conversation, or go and check out the threads!</h3>
+                    </div>)}
+                        
+                    </div>
+                    
+                </div>
+            )
+        }
+        
+    }
+}
+
+export default withRouter(MainUserPage);
