@@ -8,6 +8,7 @@ import SettingsProfile from './SettingsProfile';
 class SettingsView extends React.Component{
     constructor(props){
         super(props);
+        document.title = "Sinker - Settings"
 
         this.state = {
             username:"loading...",
@@ -19,7 +20,7 @@ class SettingsView extends React.Component{
     }
 
     async componentDidMount(){
-        var res = await makeAuthGetRequest(API_URL + "/api/v1/users/user/me").catch(e => {return false});
+        var res = await makeAuthGetRequest(API_URL + "/api/alpha/users/user/me").catch(e => {return false});
 
         if(res.data.status == "success"){
             if(res.data.user.avatar){
@@ -47,10 +48,8 @@ class SettingsView extends React.Component{
     render(){
         return (
             <div>
-                    <SettingsProfile overlay={this.toggleOverlay.bind(this)} timespent={this.state.timespent} signout={<button className={'button is-primary profile-button'} onClick={this.signout.bind(this)}>Sign out</button>} avatar={this.state.avatar} email={this.state.email} username={this.state.username}></SettingsProfile>
-                    
-                    
-                </div>
+                <SettingsProfile overlay={this.toggleOverlay.bind(this)} timespent={this.state.timespent} signout={<button className={'settings-profile-button'} onClick={this.signout.bind(this)}>Sign out</button>} avatar={this.state.avatar} email={this.state.email} username={this.state.username}></SettingsProfile>
+            </div>
         )
     }
 }

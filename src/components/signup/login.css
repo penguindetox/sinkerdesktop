@@ -12,7 +12,7 @@ margin: auto;
 }
 
 .amptextcolour{
-    background: -webkit-linear-gradient(45deg,#6c04fc,#972DFF);
+    background: -webkit-linear-gradient(45deg,#1c8ce4,#972DFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -106,7 +106,7 @@ outline: none;
 }
 
 .signup-button{
-    background-color:  #6c04fc;
+    background-color:  #1c8ce4;
     color: white;
     font-weight: 700;
     padding-top: 0.5rem; /* 8px */

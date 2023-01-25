@@ -23,6 +23,8 @@
 .add-user-input{
     border-radius: 10px;
     background-color: #2b2b2b;
+    color: white;
+    font-weight: 600;
     width: 17vw;
     
 }
@@ -84,14 +86,38 @@
   
 }
 
+.notification-error{
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    position: fixed;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+  }
+
+  .notification-success{
+    padding: 20px;
+    background-color: #36f482; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    position: fixed;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+  }
+
 .mainpage-content{
-    overflow: scroll;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 10px;
     margin-top: 10px;
     border-radius: 5px;
-    height: 95vh;
+    height: 92.5vh;
     background-color: rgb(30, 30, 30);
 }
 
@@ -170,24 +196,6 @@
 .profile-button{
     margin-right: 15px;
     float: right;
-}
-
-.avatar-container:after{
-    font-family: 'Font Awesome 5 Free';
-font-weight: 900;
-content: "\f044";
-position: absolute;
-width: 30px;
-height: 30px;
-border-radius: 50%;
-border: 1px solid grey;
-top: 0;
-left: 113px;
-background: white;
-color: blue;
-align-items: center;
-display: flex;
-justify-content: center;
 }
 
 .profile-overlay{

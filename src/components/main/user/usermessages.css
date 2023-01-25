@@ -2,9 +2,9 @@
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 15px;
-    height: 65%;
+    height: 10%;
     margin-top: 10px;
-    width: auto\9;
+    width: 5vw;
     max-width: 100%;
 }
 
@@ -25,9 +25,11 @@
 .usermessage-container{
     background:#343434;
     display: flex;
-    overflow: auto;
+    padding-bottom: 2vh;
+    padding-right: 1vw;
+    position: relative;
     overflow-wrap: break-word;
 
-    width: 100%;
-    height: 12vh;
+    width: 95%;
+    min-height: 12vh;
 }

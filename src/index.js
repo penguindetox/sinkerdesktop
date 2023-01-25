@@ -17,9 +17,9 @@ import SettingsView from './components/settings/SettingsView';
 import ForgotPassword from './components/signup/ForgotPassword';
 import Thread from './components/threads/Thread';
 import { CreateThread } from './components/threads/CreateThread';
+import { FriendPage } from './components/friends/FriendsPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log("electron: ",window.api?.electron);
 if(window.api?.electron && !window.api?.isDev){
   root.render(
     <HashRouter>
@@ -36,9 +36,10 @@ if(window.api?.electron && !window.api?.isDev){
             <Route path='create' element={<CreateThread></CreateThread>}></Route>
           </Route>
           <Route path="settings" element={<SettingsView></SettingsView>}></Route>
+          <Route path='friends' element={<FriendPage></FriendPage>}></Route>
         </Route>
         
-        <Route path='find'></Route>
+       
         <Route path='signup' element={<SignupPage />}></Route>
         <Route path='login' element={<LoginPage />}></Route>
         <Route path='resetpassword' element={<ForgotPassword></ForgotPassword>}></Route>
@@ -62,8 +63,9 @@ if(window.api?.electron && !window.api?.isDev){
             <Route path='create' element={<CreateThread></CreateThread>}></Route>
           </Route>
           <Route path="settings" element={<SettingsView></SettingsView>}></Route>
+          <Route path='friends' element={<FriendPage></FriendPage>}></Route>
         </Route>
-        <Route path='find'></Route>
+        
         <Route path='signup' element={<SignupPage />}></Route>
         <Route path='login' element={<LoginPage />}></Route>
         <Route path='resetpassword' element={<ForgotPassword></ForgotPassword>}></Route>

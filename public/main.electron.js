@@ -3,6 +3,8 @@ const {app,BrowserWindow, ipcRenderer, ipcMain, desktopCapturer} = require('elec
 
 const isDev = require('electron-is-dev');
 const path = require('path');
+
+app.disableHardwareAcceleration();
 //const { setRPCListeners } = require('./electron/discordrpc');
 
 async function createWindow(){
@@ -36,13 +38,11 @@ async function createWindow(){
     
     mainWindow.setContentProtection(true);
 
-    var res = await axios.get("http://localhost:8080/api/v1/ping").catch(e => false);
-
+    var res = await axios.get("https://phantomchatapp.herokuapp.com/api/alpha/ping").catch(e => {console.log(e); return false});
     if(res && res.data){
-        mainWindow.once('ready-to-show',() =>{
-            splashWindow.destroy();
-            mainWindow.show();
-        });
+
+        splashWindow.destroy();
+        mainWindow.show();
     }
 
     

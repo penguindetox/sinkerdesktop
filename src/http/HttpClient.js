@@ -1,7 +1,7 @@
 import * as axios from 'axios';
 
-//export const API_URL = "https://phantomchatapp.herokuapp.com";
-export const API_URL = "http://localhost:8080";
+export const API_URL = "https://phantomchatapp.herokuapp.com";
+//export const API_URL = "http://localhost:8080";
 
 export async function makeAuthPostRequest(url,data){
     var item = localStorage.getItem('token');

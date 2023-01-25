@@ -2,7 +2,8 @@
     display: flex;
     position: relative;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: scroll;
+    flex-direction: row;
     margin-top: 15px;
 }
 
@@ -33,7 +34,7 @@ transform: translateX(-50%);
 align-items: center;
     display: inline-flex;
     border-radius: 12px;
-    background-color:  #6c04fc;
+    background-color:  #1c8ce4;
     color: white;
     font-weight: 700;
     font-size: 1rem;
@@ -52,6 +53,7 @@ align-items: center;
     margin-left: 0.3rem;
     display: flex;
     width: 30%;
+    min-width: 30%;
     height: 100%;
     background:#343434;
     padding-bottom: 15px;
@@ -125,7 +127,7 @@ align-items: center;
     color: white;
     font-weight: 800;
     font-size: 1rem;
-    background-color: #6c04fc;
+    background-color: #1c8ce4;
     margin-left: auto;
 }
 

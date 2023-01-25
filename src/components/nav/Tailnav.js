@@ -2,9 +2,7 @@ import React from 'react';
 import { withRouter } from '../WithRouter';
 import './tailnav.css';
 import TailTab from './TailTab';
-import {FaFire,FaPooStorm,FaHome,FaChessBoard,FaGlobeAmericas,FaCamera,FaLayerGroup,FaCog,FaGem,FaSearch} from 'react-icons/fa';
-
-
+import {FaFire,FaPooStorm,FaHome,FaChessBoard,FaGlobeAmericas,FaCamera,FaLayerGroup,FaCog,FaGem,FaSearch, FaUsers, FaHashtag} from 'react-icons/fa';
 
 class TailNav extends React.Component{
     constructor(props){
@@ -23,7 +21,8 @@ class TailNav extends React.Component{
                 </div>
                 <div className={'side-nav'}>
                     <TailTab tooltip={'Home'} icon={<FaHome size={'50px'}></FaHome>} route={'/app/home'}></TailTab>
-                    <TailTab tooltip={"Threads"} icon={<FaSearch size={'50px'}></FaSearch>} route={'/app/threads'}></TailTab>
+                    <TailTab tooltip={"Hooks"} icon={<FaHashtag size={'50px'}></FaHashtag>} route={'/app/threads'}></TailTab>
+                    <TailTab tooltip={"Friends"} icon={<FaUsers size={'50px'}></FaUsers>} route={'/app/friends'}></TailTab>
                     <TailTab tooltip={"Settings"} className={'settings-icon'} route={"/app/settings"} icon={<FaCog size={'50px'}></FaCog>}></TailTab>
                 </div>
                 

@@ -1,0 +1,78 @@
+.create-thread-content{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-thread-form{
+    position: relative;
+    margin-top: 5vh;
+    margin-right: 5vw;
+    width: 40vw;
+    height: 85vh;
+    background-color: rgb(31, 31, 31);
+}
+
+.create-thread-center{
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+
+.create-thread-container{
+    display: flex;
+    position: relative;
+    margin-top: -15px;
+    margin-left: 5vw;
+    flex-direction: column;
+}
+
+.create-thread-subtitle{
+    color: white;
+    font-weight: 500;
+    margin-bottom: -2px;
+}
+
+.create-thread-title{
+    color: white;
+    
+    font-weight: 700;
+    margin-bottom: -5px;
+}
+
+.create-thread-input{
+    width: 27vw;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 1.15rem;
+    border-radius: 10px;
+}
+
+.create-thread-select{
+    width: 29.5vw;
+    height: 5vh;
+    background-color: #2b2b2b;
+    color: white;
+    border-radius: 10px;
+}
+
+.create-thread-form-button{
+    background-color:  #1c8ce4;
+    color: white;
+    font-weight: 700;
+    padding-top: 0.5rem; /* 8px */
+    padding-bottom: 0.5rem; /* 8px */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem;
+    width: 7rem;
+    float: right;
+    position: absolute;
+    right:0;
+    bottom: 0;
+
+    margin-right: 1vw;
+    margin-bottom: 1vh;
+}

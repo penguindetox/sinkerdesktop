@@ -71,26 +71,37 @@
 
 .settings-profile-button{
     margin-right: 15px;
+    height: 5vh;
+    background-color:  #1c8ce4;
+    color: white;
+    font-weight: 700;
+    padding-top: 0.5rem; /* 8px */
+    padding-bottom: 0.5rem; /* 8px */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem;
+    width: 7rem;
     float: right;
 }
 
-.settings-avatar-container:after{
-    font-family: 'Font Awesome 5 Free';
+.settings-avatar-container::after{
 font-weight: 900;
-content: "\f044";
+content: "Change";
 position: absolute;
-width: 30px;
+width: 60px;
 height: 30px;
-border-radius: 50%;
-border: 1px solid grey;
+border-radius: 10px;
+border: 2px solid grey;
 top: 0;
-left: 113px;
-background: white;
-color: blue;
+left: 90px;
+background: #2b2b2b;
+color: rgb(255, 255, 255);
 align-items: center;
 display: flex;
 justify-content: center;
 }
+
+
 
 .settings-profile-overlay{
     position: fixed; /* Sit on top of the page content */

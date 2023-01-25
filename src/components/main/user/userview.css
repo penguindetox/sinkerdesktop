@@ -5,31 +5,36 @@
 transform: translateX(-70%);
 align-items: center;
     display: inline-flex;
+    justify-content: center;
+    width: 65vw;
 }
 
 .message-input{
     width: 40vw;
     height: 0.75vh;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
+    background-color:rgb(31, 31, 31);
+    color: white;
     border-radius: 15px;
 }
 
 .message-button{
     border-radius: 12px;
-    background-color:  #6c04fc;
+    background-color:  #1c8ce4;
     color: white;
     font-weight: 700;
     margin-left: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     height: 100%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .main-message-content{
     color: white;
     overflow-y: scroll;
+    position: relative;
     height: 80vh;
     width: 70vw;
 }

@@ -5,9 +5,11 @@
     <link rel="icon" href="%PUBLIC_URL%/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <link href="https://db.onlinewebfonts.com/c/4f6fb2fa3c231278167b36e966718cbb?family=Uni+Sans+Heavy" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://use.typekit.net/aiq5zsq.css">
     <meta
       name="description"
-      content="The chat app for phantom"
+      content="The chat app for sinker"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -17,6 +19,15 @@
       overflow-x: scroll;
       background:#2b2b2b;
           background-size:100% 100%;
+          
+      }
+      :root{
+        --font-title:"cubano",sans-serif;
+        --font-body:"sofia-pro",sans-serif
+      }
+
+      body *{
+        font-family: var(--font-title);
       }
           </style>
     <!--
@@ -33,7 +44,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Phantom</title>
+    <title>Sinker</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

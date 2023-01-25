@@ -26,7 +26,7 @@ function ProfileAvatar(props){
         formData.append('avatar',e.target.files[0],'avatar')
 
 
-        var res = await makeAuthPostRequest(API_URL + "/api/v1/users/avatar",formData);
+        var res = await makeAuthPostRequest(API_URL + "/api/alpha/users/avatar",formData);
 
         if(res.data.status == "success"){
             var fr = new FileReader();
@@ -47,10 +47,10 @@ function ProfileAvatar(props){
 
 
     return (
-        <div className={'avatar-container'}>
+        <div className={'settings-avatar-container'}>
            
             <input style={{"display":"none"}}onChange={onFileChange} ref={fileRef} accept={".jpg,.jpeg,.png"} type={"file"}></input>
-            <a onClick={onAvatarClick}><img className={'settings-profile-avatar'} src={avatar}></img></a>
+            <a style={{'display':"block"}} onClick={onAvatarClick}><img className={'settings-profile-avatar'} src={avatar}></img></a>
         </div>
     )
 }
@@ -70,7 +70,6 @@ class SettingsProfile extends React.Component{
     }
 
     static getDerivedStateFromProps(props, current_state) {
-        console.log("derived",props.avatar)
         return {
             avatar:props.avatar
         }
@@ -108,7 +107,6 @@ class SettingsProfile extends React.Component{
 
                 <div>
                             {this.props.signout}
-                            <button className={'button is-primary profile-button'} onClick={this.updateProfile.bind(this)}>Edit Profile</button>
                            
                     </div>
                

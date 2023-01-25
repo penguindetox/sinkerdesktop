@@ -34,6 +34,8 @@ export function LoadingNotification(props){
 export class SignupPage extends React.Component{
     constructor(props){
         super(props);
+        document.title = "Sinker - Signup"
+
         this.state ={
             username:null,
             email:null,
@@ -49,7 +51,7 @@ export class SignupPage extends React.Component{
 
         this.setState({'loading':true,'error':false});
         if(this.state.username && this.state.email && this.state.password){
-            var res = await axios.post(API_URL + "/api/v1/users/create",{username:this.state.username,email:this.state.email,password:this.state.password}).catch(e => false);
+            var res = await axios.post(API_URL + "/api/alpha/users/create",{username:this.state.username,email:this.state.email,password:this.state.password}).catch(e => false);
             
             if(res.data.status == "success"){
                 localStorage.setItem('token',res.data.token);
@@ -97,7 +99,7 @@ export class SignupPage extends React.Component{
                 {this.state.loading ? <LoadingNotification></LoadingNotification> : <></>}
                 {!this.state.error ? <></> : <>{this.state.error == "emailtaken" ? <NotificationError errorFunc={this.onChangeError.bind(this)} content={"The email you entered is unavailable or has already been taken"} /> :<NotificationError errorFunc={this.onChangeError.bind(this)} content={"The username you entered is unavailable or has already been taken"}></NotificationError>}</>}
                 <form style={{'padding':'10px'}} onSubmit={this.submitSignup.bind(this)}>
-                    <h1 className={"form-title"}>Phantom - A truely secure messaging platform</h1>
+                    <h1 className={"form-title"}>Sinker - The first truely ephemeral messaging platform</h1>
                     <label className={"amptextcolour"} htmlFor={"email"}><b>Email</b></label>
                     <p className={'control has-icons-left'}>
                         <input className={"login-input"} type="text" value={this.state.email} onChange={this.onChangeEmail.bind(this)} placeholder="Enter Email" name="email" required />

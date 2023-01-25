@@ -34,6 +34,8 @@ export class LoginPage extends React.Component{
     constructor(props){
         super(props);
 
+        document.title = "Sinker - Sign in"
+
         this.state ={
             login:null,
             password:null,
@@ -64,7 +66,7 @@ export class LoginPage extends React.Component{
         e.preventDefault();
         this.setState({'error':false,loading:true});
 
-        var res = await axios.default.post(API_URL + '/api/v1/users/login',{login:this.state.login,password:this.state.password});
+        var res = await axios.default.post(API_URL + '/api/alpha/users/login',{login:this.state.login,password:this.state.password});
 
         if(res.data.status == "success"){
             localStorage.setItem('token',res.data.token);
@@ -84,7 +86,7 @@ export class LoginPage extends React.Component{
                 {!this.state.error ? <></> : <>{this.state.error == "emailnotused" ? <NotificationError errorFunc={this.onChangeError.bind(this)} content={"The email or username you entered is unavilable or has not been used yet."} /> :<NotificationError errorFunc={this.onChangeError.bind(this)} content={"The password that you entered is incorrect."}></NotificationError>}</>}
                 <div className={"signup-section beta-background"}>
                     <form style={{'padding':'10px'}} onSubmit={this.submitLogin.bind(this)}>
-                        <h1 className={"form-title"}>Sign into Phantom.</h1>
+                        <h1 className={"form-title"}>Sign into Sinker.</h1>
                         <label className={"amptextcolour font-bold"}><b>Email or username</b></label>
                         <p className={'control has-icons-left'}>
                             <input className={"login-input"} type="text" value={this.state.loginn} onChange={this.onChangeLogin.bind(this)} placeholder="Enter Email or Username" required /> 
